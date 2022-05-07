@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Loan Eligibility Prediction</title>
+    </head>
+    <body>
+        <h1>Home</h1>
+        <form action = "/predict", method="post">
+            <!-- Gender -->
+            <label for="Gender">Gender: </label> <br>
+            <input type="radio" id="Male" name="gender">
+            <label for="Male">Male</label> <br>
+            <input type="radio" id="Female" name="gender">
+            <label for="Female">Female</label><br><br>
+
+            <!-- Married -->
+            <label for="Married">Married: </label><br>
+            <input type="radio" id="yes-married" name="Married">
+            <label for="yes-married">Yes</label><br>
+            <input type="radio" id="no-married" name="Married">
+            <label for="no-married">No</label><br><br>
+
+            <!-- Dependents -->
+            <label for="Dependents">Dependents (How many people are depend on you): </label>
+            <select name="Dependents" id="depend">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3+</option>
+            </select><br><br>
+
+            <!-- Education -->
+            <label for="Education">Education: </label>
+            <select name="Education" id="education">
+                <option>Not Graduate</option>
+                <option>Graduate</option>
+            </select><br><br>
+
+            <!-- Self Employed -->
+            <label for="self-employed">Self Employed: </label><br>
+            <input type="radio" id="yes-employed" name="emp">
+            <label for="yes-emp">Yes</label><br>
+            <input type="radio" id="no-employed" name="emp">
+            <label for="no-emp">No</label><br><br>
+
+            <!-- Applicant Income -->
+            <label for="applicant-income">Applicant Income: </label><br>
+            <input type="number"><br><br>
+
+            <!-- Coapplicant Income -->
+            <label for="coapplicant-income">coapplicant Income: </label><br>
+            <input type="number"><br><br>
+
+            <!-- Loan Amount -->
+            <label for="loan-amount">Loan Amount: </label>
+            <input type="number"><br><br>
+
+            <!-- Credit History -->
+            <label for="credit-history">Credit History: </label>
+            <select name="credit" id="credit-history">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select><br><br>
+
+            <!-- Loan Amount Term -->
+            <label for="loan-amount-term">Loan Amount Term (in months): </label><br>
+            <input type="number"><br><br>
+
+            <!-- Property -->
+            <label for="property">Property: </label>
+            <select name="pty" id = "property">
+                <option>Rural</option>
+                <option>Urban</option>
+                <option>Semiurban</option>
+            </select><br><br>
+
+        </form>
+    </body>
+</html>
