@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Predict</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/predict_style.css')}}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-head">Result</div>
+            <div class="result-msg">
+                {%if data == 'N'%}
+                <h2>No, You are not eligible for Loan</h2>
+                {%else%}
+                <h2>Yes, You are eligible for Loan</h2>
+                {%endif%}
+            </div>
+            <div class="goback">
+                <a href="/home" class="btn">Go back</a>
+            </div>
+        </div>
+    </body>
+</html>

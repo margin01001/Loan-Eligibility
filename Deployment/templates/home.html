@@ -3,78 +3,116 @@
     <head>
         <meta charset="UTF-8">
         <title>Loan Eligibility Prediction</title>
+        <!-- <link rel="stylesheet" href="/static/style.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}">
     </head>
-    <body>
-        <h1>Home</h1>
+<body>
+    <div class="container">
+        <div class="top-head">Loan Approvel Form</div>
         <form action = "/predict", method="post">
             <!-- Gender -->
-            <label for="Gender">Gender: </label> <br>
-            <input type="radio" id="Male" name="gender">
-            <label for="Male">Male</label> <br>
-            <input type="radio" id="Female" name="gender">
-            <label for="Female">Female</label><br><br>
-
-            <!-- Married -->
-            <label for="Married">Married: </label><br>
-            <input type="radio" id="yes-married" name="Married">
-            <label for="yes-married">Yes</label><br>
-            <input type="radio" id="no-married" name="Married">
-            <label for="no-married">No</label><br><br>
-
-            <!-- Dependents -->
-            <label for="Dependents">Dependents (How many people are depend on you): </label>
-            <select name="Dependents" id="depend">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3+</option>
-            </select><br><br>
-
-            <!-- Education -->
-            <label for="Education">Education: </label>
-            <select name="Education" id="education">
-                <option>Not Graduate</option>
-                <option>Graduate</option>
-            </select><br><br>
-
-            <!-- Self Employed -->
-            <label for="self-employed">Self Employed: </label><br>
-            <input type="radio" id="yes-employed" name="emp">
-            <label for="yes-emp">Yes</label><br>
-            <input type="radio" id="no-employed" name="emp">
-            <label for="no-emp">No</label><br><br>
-
-            <!-- Applicant Income -->
-            <label for="applicant-income">Applicant Income: </label><br>
-            <input type="number"><br><br>
-
-            <!-- Coapplicant Income -->
-            <label for="coapplicant-income">coapplicant Income: </label><br>
-            <input type="number"><br><br>
-
-            <!-- Loan Amount -->
-            <label for="loan-amount">Loan Amount: </label>
-            <input type="number"><br><br>
-
-            <!-- Credit History -->
-            <label for="credit-history">Credit History: </label>
-            <select name="credit" id="credit-history">
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-            </select><br><br>
-
-            <!-- Loan Amount Term -->
-            <label for="loan-amount-term">Loan Amount Term (in months): </label><br>
-            <input type="number"><br><br>
-
-            <!-- Property -->
-            <label for="property">Property: </label>
-            <select name="pty" id = "property">
-                <option>Rural</option>
-                <option>Urban</option>
-                <option>Semiurban</option>
-            </select><br><br>
-
+            <div class="user-input">
+                <div class="feature-input">
+                    <label for="Gender" class="feature-names">Gender: </label> <br>
+                    <input type="radio" id="Male" name="gender" value = '0'>
+                    <label for="Male">Male</label>
+                    <input type="radio" id="Female" name="gender" value = '1'>
+                    <label for="Female">Female</label>
+                    <br>
+                </div>
+    
+                <!-- Married -->
+                <div class="feature-input">
+                    <label for="Married" class="feature-names">Married: </label><br>
+                    <input type="radio" id="yes-married" name="Married" value="0">
+                    <label for="yes-married">Yes</label>
+                    <input type="radio" id="no-married" name="Married" value="1">
+                    <label for="no-married">No</label><br>
+                </div>
+    
+                <!-- Dependents -->
+                <div class="feature-input">
+                    <label for="Dependents" class="feature-names">Dependents: </label>
+                    <select name="Dependents" id="depend">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option value="3">3+</option>
+                    </select><br>
+                </div>
+    
+                <!-- Education -->
+                <div class="feature-input">
+                    <label for="Education" class="feature-names">Education: </label>
+                    <select name="Education" id="education">
+                        <option value="1">Not Graduate</option>
+                        <option value="0">Graduate</option>
+                    </select><br>
+                </div>
+    
+                <!-- Self Employed -->
+                <div class="feature-input">
+                    <label for="self-employed" class="feature-names">Self Employed: </label><br>
+                    <input type="radio" id="yes-employed" name="emp" value="0">
+                    <label for="yes-employed">Yes</label>
+                    <input type="radio" id="no-employed" name="emp" value="1">
+                    <label for="no-employed">No</label><br>
+                </div>
+    
+                <!-- Applicant Income -->
+                <div class="feature-input">
+                    <label for="applicant-income" class="feature-names">Applicant Income: </label>
+                    <input class="input-text" type="text" id = "applicant-income" name="applicant-income" placeholder="Enter Applicant Income"><br>
+                </div>
+    
+                <!-- Coapplicant Income -->
+                <div class="feature-input">
+                    <label for="coapplicant-income" class="feature-names">Coapplicant Income: </label>
+                    <input class="input-text" type="text" id="coapplicant-income" name="coapplicant-income" placeholder="Enter Coapplicant Income"><br>
+                </div>
+    
+                <!-- Loan Amount -->
+                <div class="feature-input">
+                    <label for="loan-amount" class="feature-names">Loan Amount: </label>
+                    <input class="input-text" type="text" id="loan-amount" name="loan-amount" placeholder="Enter Loan Amount"><br>
+                </div>
+    
+                <!-- Credit History -->
+                <div class="feature-input">
+                    <label for="credit-history" class="feature-names">Credit History: </label>
+                    <select name="credit" id="credit-history">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select><br>
+                </div>
+    
+                <!-- Loan Amount Term -->
+                <div class="feature-input">
+                    <label for="loan-amount-term" class="feature-names">Loan Amount Term: </label>
+                    <input class="input-text" type="text" id="loan-amount-term" name="loan-amount-term"  placeholder="Enter Loan Amount Term"><br>
+                </div>
+    
+                <!-- Property -->
+                <div class="feature-input">
+                    <label for="property" class="feature-names">Property Area: </label>
+                    <select name="property" id = "property">
+                        <option>Rural</option>
+                        <option>Urban</option>
+                        <option>Semiurban</option>
+                    </select><br>
+                </div>
+                <div class="button">
+                    <input type="submit" value="predict" >
+                </div>
+            </div>
         </form>
-    </body>
+        <center>
+            <div class="or-margin">Or</div>
+        </center>
+        <form action = '/predict_csv_file', method="post">
+            <input type="file" name="file">
+            <input type="submit" value="predict">
+        </form>
+    </div>
+</body>
 </html>
